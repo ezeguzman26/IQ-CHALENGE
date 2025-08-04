@@ -1,0 +1,152 @@
+/* RESET Y BODY */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: white;
+  overflow-x: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CONTENEDORES PRINCIPALES */
+.screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #121212;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* FONDO SEMI TRANSPARENTE */
+.background-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.05), transparent 70%);
+  z-index: 0;
+}
+
+/* FONDO DE EMOJIS CEREBRO */
+.brain-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.brain-overlay span {
+  position: absolute;
+  font-size: 6vw;
+  color: rgba(255, 255, 255, 0.07);
+  user-select: none;
+}
+
+/* Posiciones aleatorias para cerebros */
+.brain-overlay span:nth-child(1) { top: 10%; left: 5%; transform: rotate(-20deg); }
+.brain-overlay span:nth-child(2) { top: 30%; left: 60%; transform: rotate(15deg); font-size: 4vw; }
+.brain-overlay span:nth-child(3) { top: 50%; left: 20%; transform: rotate(-10deg); font-size: 7vw; }
+.brain-overlay span:nth-child(4) { top: 70%; left: 75%; transform: rotate(10deg); font-size: 5vw; }
+.brain-overlay span:nth-child(5) { top: 80%; left: 10%; transform: rotate(-15deg); font-size: 4vw; }
+.brain-overlay span:nth-child(6) { top: 15%; left: 75%; transform: rotate(5deg); font-size: 6vw; }
+.brain-overlay span:nth-child(7) { top: 60%; left: 40%; transform: rotate(-5deg); font-size: 3vw; }
+.brain-overlay span:nth-child(8) { top: 25%; left: 30%; transform: rotate(20deg); font-size: 5vw; }
+.brain-overlay span:nth-child(9) { top: 45%; left: 80%; transform: rotate(-25deg); font-size: 4vw; }
+
+/* TITULOS */
+#game-title {
+  position: relative;
+  font-size: 8vw;
+  font-weight: 900;
+  margin-bottom: 40px;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+  z-index: 1;
+  text-align: center;
+}
+
+/* BOTONES */
+button {
+  position: relative;
+  z-index: 1;
+  background-color: #00bcd4;
+  color: #121212;
+  border: none;
+  border-radius: 12px;
+  padding: 15px 40px;
+  font-size: 5vw;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 188, 212, 0.7);
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0097a7;
+}
+
+/* SELECCIÓN DE NIVELES */
+#level-select h2 {
+  position: relative;
+  z-index: 1;
+  font-size: 6vw;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  text-align: center;
+}
+
+#levels-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Tarjetas de niveles */
+.level-card {
+  background-color: #222;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.level-card:hover {
+  background-color: #00bcd4;
+  color: #121212;
+}
+
+.level-card span {
+  font-size: 5vw;
+  font-weight: 700;
+}
+
+.level-preview {
+  font-size: 6vw;
+  user-select: none;
+}
