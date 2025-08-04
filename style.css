@@ -150,3 +150,22 @@ button:hover {
   font-size: 6vw;
   user-select: none;
 }
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  color: #00bcd4;
+  font-size: 8vw;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  padding: 5px 10px;
+  z-index: 20;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: #0097a7;
+}
