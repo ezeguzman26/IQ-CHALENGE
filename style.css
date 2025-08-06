@@ -1,4 +1,3 @@
-/* RESET Y BODY */
 * {
   margin: 0;
   padding: 0;
@@ -16,24 +15,25 @@ body {
   align-items: center;
 }
 
-/* CONTENEDORES PRINCIPALES */
+#menu {
+  justify-content: center;
+}
+
 .screen {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100vw;
   height: 100vh;
   background-color: #121212;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 20px;
   overflow: hidden;
   z-index: 10;
 }
 
-/* FONDO SEMI TRANSPARENTE */
 .background-overlay {
   position: absolute;
   top: 0; left: 0;
@@ -43,7 +43,6 @@ body {
   z-index: 0;
 }
 
-/* FONDO DE EMOJIS CEREBRO */
 .brain-overlay {
   position: absolute;
   top: 0; left: 0;
@@ -60,7 +59,7 @@ body {
   user-select: none;
 }
 
-/* Posiciones aleatorias para cerebros */
+/* Posiciones */
 .brain-overlay span:nth-child(1) { top: 10%; left: 5%; transform: rotate(-20deg); }
 .brain-overlay span:nth-child(2) { top: 30%; left: 60%; transform: rotate(15deg); font-size: 4vw; }
 .brain-overlay span:nth-child(3) { top: 50%; left: 20%; transform: rotate(-10deg); font-size: 7vw; }
@@ -71,7 +70,6 @@ body {
 .brain-overlay span:nth-child(8) { top: 25%; left: 30%; transform: rotate(20deg); font-size: 5vw; }
 .brain-overlay span:nth-child(9) { top: 45%; left: 80%; transform: rotate(-25deg); font-size: 4vw; }
 
-/* TITULOS */
 #game-title {
   position: relative;
   font-size: 8vw;
@@ -82,7 +80,15 @@ body {
   text-align: center;
 }
 
-/* BOTONES */
+h2 {
+  position: relative;
+  z-index: 1;
+  font-size: 6vw;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  text-align: center;
+}
+
 button {
   position: relative;
   z-index: 1;
@@ -102,16 +108,6 @@ button:hover {
   background-color: #0097a7;
 }
 
-/* SELECCIÓN DE NIVELES */
-#level-select h2 {
-  position: relative;
-  z-index: 1;
-  font-size: 6vw;
-  margin-bottom: 30px;
-  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-  text-align: center;
-}
-
 #levels-container {
   position: relative;
   z-index: 1;
@@ -120,9 +116,34 @@ button:hover {
   gap: 25px;
   width: 100%;
   max-width: 400px;
+  height: 70vh;
+  overflow-y: auto;
+  padding-bottom: 60px;
+  scrollbar-width: thin;
+  scrollbar-color: #00bcd4 transparent;
 }
 
-/* Tarjetas de niveles */
+#levels-container::-webkit-scrollbar {
+  display: none;
+  width: 10px;
+}
+
+#levels-container::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+#levels-container::-webkit-scrollbar-thumb:hover {
+  background-color: #0097a7;
+}
+
+#level-select h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  z-index: 1;
+}
+
 .level-card {
   background-color: #222;
   border-radius: 20px;
@@ -150,6 +171,7 @@ button:hover {
   font-size: 6vw;
   user-select: none;
 }
+
 .back-button {
   position: absolute;
   top: 20px;
@@ -168,4 +190,76 @@ button:hover {
 
 .back-button:hover {
   color: #0097a7;
+}
+
+.level-title {
+  margin-top: 0px;
+  font-size: 6vw;
+  text-align: center;
+  z-index: 1;
+} 
+
+.iq-display {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 5vw;
+  font-weight: bold;
+  color: #00bcd4;
+  z-index: 20;
+  background-color: rgba(0,0,0,0.4);
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+.connect-colors {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 400px;
+  margin-top: 40px;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  z-index: 2;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.dot {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid white;
+  cursor: pointer;
+}
+
+.dot[data-color="red"] {
+  background-color: red;
+}
+
+.dot[data-color="blue"] {
+  background-color: blue;
+}
+
+#connection-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#success-message {
+  margin-top: 30px;
+  font-size: 5vw;
+  color: #00ffcc;
 }
