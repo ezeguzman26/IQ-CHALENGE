@@ -7,19 +7,12 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- MENU PRINCIPAL -->
+  
+  <!-- MENÚ PRINCIPAL -->
   <div id="menu" class="screen">
     <div class="background-overlay"></div>
     <div class="brain-overlay">
-      <span>🧠</span>
-      <span>🧠</span>
-      <span>🧠</span>
-      <span>🧠</span>
-      <span>🧠</span>
-      <span>🧠</span>
-      <span>🧠</span>
-      <span>🧠</span>
-      <span>🧠</span>
+      <span>🧠</span><span>🧠</span><span>🧠</span><span>🧠</span><span>🧠</span><span>🧠</span><span>🧠</span><span>🧠</span><span>🧠</span>
     </div>
     <h1 id="game-title">IQ Challenge</h1>
     <button id="start-button">Comenzar Juego</button>
@@ -30,22 +23,15 @@
     <div class="background-overlay"></div>
     <h2>Selecciona un nivel</h2>
     <div id="levels-container">
-      <div class="level-card" data-level="1">
-        <span>Nivel 1</span>
-        <div class="level-preview">🧩</div>
-      </div>
-      <!-- Más niveles se agregan dinámicamente -->
     </div>
-    <button id="back-to-menu" aria-label="Volver al menú" title="Volver al menú" class="back-button">
-      ←
-    </button>
+    <button id="back-to-menu" aria-label="Volver al menú" title="Volver al menú" class="back-button">←</button>
   </div>
 
-  <!-- CONTENEDOR DE JUEGO (vacío por ahora) -->
-  <div id="game" class="screen" style="display:none;">
-    <!-- Aquí irá la lógica y UI del juego IQ -->
-  </div>
+  <div class="iq-display">🧠<span id="iq-points">0</span> IQ</div>
+  
+  <div id="game-screens"></div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
